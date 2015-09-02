@@ -11,6 +11,8 @@ angular.module('miniumMailApp')
   .controller('MainCtrl', function ($routeParams, $modal) {
     this.currentFolder = $routeParams.currentFolder;
 
+    $(".loading").hide();
+    
     this.openComposeWindow = function(mailForm) {
       var modalInstance = $modal.open({
         templateUrl: 'views/mail-compose.html',
@@ -25,6 +27,10 @@ angular.module('miniumMailApp')
       });
       modalInstance.result.then(function (mail) {
         console.log("Mail sent:", mail);
+        $(".loading").show();
+        setTimeout(function() {
+            $(".loading").toggle();
+        }, 1000);
       });
     };
 
