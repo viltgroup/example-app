@@ -9,7 +9,6 @@
  */
 angular.module('miniumMailApp')
   .controller('MailComposeCtrl', function ($modalInstance, mailForm) {
-    var self = this;
     this.mailForm = mailForm;
     this.contacts = data.contacts;
 

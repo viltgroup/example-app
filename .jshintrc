@@ -1,7 +1,6 @@
 {
   "bitwise": true,
   "browser": true,
-  "curly": true,
   "eqeqeq": true,
   "esnext": true,
   "latedef": true,
@@ -10,7 +9,9 @@
   "strict": true,
   "undef": true,
   "unused": true,
+  "asi": true,
   "globals": {
-    "angular": false
+    "angular": false,
+    "data": true
   }
 }

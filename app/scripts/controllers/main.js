@@ -23,8 +23,8 @@ angular.module('miniumMailApp')
           }
         }
       });
-      modalInstance.result.then(function (selectedItem) {
-
+      modalInstance.result.then(function (mail) {
+        console.log("Mail sent:", mail);
       });
     };
 
