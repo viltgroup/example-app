@@ -1,0 +1,33 @@
+<div class="btn-group" role="group" aria-label="Mail actions" id="mail-actions">
+  <button id="remove-action" type="button" ng-click="mailList.remove()" class="btn btn-default btn-lg" ng-disabled="!mailList.selectedMail"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" ng-disabled="!mailList.selectedMail">
+      <span class="glyphicon glyphicon-move" aria-hidden="true"></span> Move
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li ng-repeat="folder in mailList.otherFolders"><a ng-click="mailList.move(folder.id)">{{folder.name}}</a></li>
+    </ul>
+  </div>
+  <button type="button" ng-click="main.openForwardWindow(mailList.selectedMail)" class="btn btn-default btn-lg" ng-disabled="!mailList.selectedMail"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Forward</button>
+  <button type="button" ng-click="main.openReplyWindow(mailList.selectedMail)" class="btn btn-default btn-lg" ng-disabled="!mailList.selectedMail"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Reply</button>
+</div>
+
+<table class="table table-hover" id="mail-list">
+  <thead>
+    <tr>
+      <th>Tags</th>
+      <th>Recipients</th>
+      <th>Subject</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="{{mailList.selectedMail === mail ? 'info' : ''}}" ng-repeat="mail in mailList.mails | inFolder:mailList.currentFolder" ng-click="mailList.selectMail(mail)">
+      <td><span ng-repeat="tag in mail.tags" class="label label-primary">{{tag}}</span></td>
+      <td>{{mail.contact_id | contactName}}</td>
+      <td>{{mail.subject}}</td>
+      <td>{{mail.message}}</td>
+    </tr>
+  </tbody>
+</table>
