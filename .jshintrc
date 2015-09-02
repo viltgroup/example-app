@@ -12,6 +12,6 @@
   "asi": true,
   "globals": {
     "angular": false,
-    "data": true
+    "_": false
   }
 }

@@ -8,6 +8,6 @@
  * Controller of the miniumMailApp
  */
 angular.module('miniumMailApp')
-  .controller('FoldersNavCtrl', function () {
-    this.folders = data.folders;
+  .controller('FoldersNavCtrl', function (Folder) {
+    this.folders = Folder.query();
   });

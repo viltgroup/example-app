@@ -8,12 +8,11 @@
  * Controller of the miniumMailApp
  */
 angular.module('miniumMailApp')
-  .controller('MailComposeCtrl', function ($modalInstance, mailForm) {
+  .controller('MailComposeCtrl', function (Contact, Mail, $modalInstance, mailForm) {
     this.mailForm = mailForm;
-    this.contacts = data.contacts;
-
+    this.contacts = Contact.query();
     this.matchingContacts = function (query) {
-      return data.contacts
+      return Contact.query()
         .map(function (c) {
           return { text: c.firstName + ' ' + c.lastName, id: c.id };
         })
@@ -21,16 +20,14 @@ angular.module('miniumMailApp')
     };
 
     this.send = function () {
-      var timestamp = Date.now ? Date.now() : new Date().getTime();
       var mail = {
-        id: 'mail_' + timestamp,
         folders: [ 'sent' ],
         contact_id: mailForm.recipients,
         subject: mailForm.subject,
         message: mailForm.message,
-        time: timestamp
+        time: new Date().getTime()
       };
-      data.mails.push(mail);
+      mail = Mail.save(mail);
       $modalInstance.close(mail);
     };
 

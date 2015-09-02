@@ -38,19 +38,17 @@ angular
       });
     };
   })
-  .filter('contactName', function() {
+  .filter('contactName', function(Contact) {
     return function (id) {
       if (!id) return null;
-      var contacts = data.contacts.filter(function (c) { return c.id === id });
-      if (contacts.length === 0) return null;
-      var c = contacts[0];
+      var c = Contact.get(id);
       return c.firstName + ' ' + c.lastName;
     };
   })
-  .filter('countMails', function() {
+  .filter('countMails', function(Mail) {
     return function (folder) {
       if (!folder) return 0;
-      return data.mails.filter(function (m) {
+      return Mail.query().filter(function (m) {
         return m.folders.indexOf(folder.id) !== -1;
       }).length;
     };
