@@ -8,7 +8,23 @@
  * Service of the miniumMailApp
  */
 angular.module('miniumMailApp')
-  .factory('Mail', function (repositoryFactory) {
+  .factory('Mail', function (repositoryFactory, Contact, Folder, randomSizes) {
+    var randomMail = function () {
+      var word = chance.word();
+      var contactIds = _.collect(Contact.query(), "id");
+      var folderIds = _.collect(Folder.query(), "id");
+
+      return {
+        "id": "mail_" + chance.integer({min: 1000}),
+        "contact_id": chance.pick(contactIds),
+        "tags": _.times(chance.integer({ min: 0, max: 3 }), chance.word.bind(chance)),
+        "folders": [ chance.pick(folderIds) ],
+        "time": chance.timestamp(),
+        "subject": chance.sentence({ words: chance.integer({ min: 1, max: 10 }) }),
+        "message": chance.paragraph({ sentences: chance.integer({ min: 1, max: 4 }) })
+      };
+    };
+
     return repositoryFactory.create([
       {
         "id": "mail_2139",
@@ -70,5 +86,5 @@ angular.module('miniumMailApp')
         "subject": "Fusce tristique pretium :(",
         "message": "aliquam quis arcu."
       }
-    ]);
+    ].concat(_.times(randomSizes.mails, randomMail)));
   });

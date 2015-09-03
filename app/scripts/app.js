@@ -30,6 +30,29 @@ angular
         redirectTo: '/folders/inbox'
       });
   })
+  .factory('randomSizes', function ($location) {
+    var params = $location.search();
+    switch(params.randomSizes) {
+      case 'lg':
+        return {
+          contacts: 20,
+          folders: 10,
+          mails: 290
+        };
+      case 'md':
+        return {
+          contacts: 3,
+          folders: 2,
+          mails: 30
+        };
+      default:
+        return {
+          contacts: params.c || 0,
+          folders: params.f || 0,
+          mails: params.m || 0
+        };
+    };
+  })
   .filter('inFolder', function() {
     return function (input, folder) {
       if (!folder) return input;

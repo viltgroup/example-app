@@ -32,6 +32,7 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/bootstrap/dist/js/bootstrap.js',
+      'bower_components/chance/chance.js',
       'bower_components/lodash/lodash.js',
       'bower_components/moment/moment.js',
       'bower_components/ng-tags-input/ng-tags-input.min.js',
