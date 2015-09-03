@@ -10,7 +10,6 @@
 angular.module('miniumMailApp')
   .factory('Mail', function (repositoryFactory, Contact, Folder, configuration) {
     var randomMail = function () {
-      var word = chance.word();
       var contactIds = _.collect(Contact.query(), "id");
       var folderIds = _.collect(Folder.query(), "id");
 
