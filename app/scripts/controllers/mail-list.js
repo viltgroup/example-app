@@ -8,7 +8,7 @@
  * Controller of the miniumMailApp
  */
 angular.module('miniumMailApp')
-  .controller('MailListCtrl', function ($filter, $routeParams) {
+  .controller('MailListCtrl', function ($filter, $routeParams,loading) {
     var self = this;
     this.currentFolder = data.folders.filter(function (f) { return f.id === $routeParams.currentFolder })[0];
     this.mails = data.mails;
@@ -26,9 +26,11 @@ angular.module('miniumMailApp')
         // move to trash
         self.move("trash");
       }
+      loading.show();
     };
     this.move = function (folder) {
       self.selectedMail.folders = [ folder ];
+      loading.show();
     };
     this.forward = function () {
 
