@@ -1,4 +1,5 @@
 <div class="btn-group" role="group" aria-label="Mail actions" id="mail-actions">
+
   <button id="remove-action" type="button" ng-click="mailList.remove()" class="btn btn-default btn-lg" ng-disabled="!mailList.selectedMail"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
   <div class="btn-group" role="group">
     <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" ng-disabled="!mailList.selectedMail">
@@ -12,6 +13,7 @@
   <button type="button" ng-click="main.openForwardWindow(mailList.selectedMail)" class="btn btn-default btn-lg" ng-disabled="!mailList.selectedMail"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Forward</button>
   <button type="button" ng-click="main.openReplyWindow(mailList.selectedMail)" class="btn btn-default btn-lg" ng-disabled="!mailList.selectedMail"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Reply</button>
 </div>
+
 
 <table class="table table-hover" id="mail-list">
   <thead>
