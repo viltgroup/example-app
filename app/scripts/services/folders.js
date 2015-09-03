@@ -8,7 +8,7 @@
  * Service of the miniumMailApp
  */
 angular.module('miniumMailApp')
-  .factory('Folder', function (repositoryFactory, randomSizes) {
+  .factory('Folder', function (repositoryFactory, configuration) {
     var randomFolder = function () {
       var word = chance.word();
       return {
@@ -34,5 +34,5 @@ angular.module('miniumMailApp')
         "id": "trash",
         "name": "Trash"
       }
-    ].concat(_.times(randomSizes.folders, randomFolder)));
+    ].concat(_.times(configuration.randomFolders, randomFolder)));
   });

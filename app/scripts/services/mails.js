@@ -8,7 +8,7 @@
  * Service of the miniumMailApp
  */
 angular.module('miniumMailApp')
-  .factory('Mail', function (repositoryFactory, Contact, Folder, randomSizes) {
+  .factory('Mail', function (repositoryFactory, Contact, Folder, configuration) {
     var randomMail = function () {
       var word = chance.word();
       var contactIds = _.collect(Contact.query(), "id");
@@ -86,5 +86,5 @@ angular.module('miniumMailApp')
         "subject": "Fusce tristique pretium :(",
         "message": "aliquam quis arcu."
       }
-    ].concat(_.times(randomSizes.mails, randomMail)));
+    ].concat(_.times(configuration.randomMails, randomMail)));
   });
