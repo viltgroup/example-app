@@ -28,6 +28,7 @@ angular.module('miniumMailApp')
       {
         "id": "mail_2139",
         "contact_id": "contact_342",
+        "tags": [ "minium" ],
         "folders": ["inbox"],
         "time": 1334891976104,
         "subject": "Minium Can!",

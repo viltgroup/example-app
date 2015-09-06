@@ -16,6 +16,6 @@ angular.module('miniumMailApp')
       randomFolders: params.f || 0,
       randomMails: params.m || 0,
       // in seconds
-      loadingTimeoutSeconds: params.t || 1
+      loadingTimeSeconds: params.t || 1
     };
   });

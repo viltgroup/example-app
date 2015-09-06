@@ -1,0 +1,20 @@
+<form class="form-horizontal">
+  <div class="modal-header">
+      <h3 class="modal-title">Configuration</h3>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="loading-time-seconds" class="col-sm-4 control-label">Loading time</label>
+      <div class="col-sm-8">
+        <div class="input-group">
+          <input type="number" class="form-control" id="loading-time-seconds" ng-model="configFormCtrl.configurationForm.loadingTimeSeconds">
+          <div class="input-group-addon">seconds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-default btn-lg pull-left" type="button" ng-click="configFormCtrl.cancel()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+      <button class="btn btn-primary btn-lg" type="button" ng-click="configFormCtrl.save()"><span class="glyphicon glyphicon-save"></span> Save</button>
+  </div>
+</form>

@@ -37,6 +37,8 @@ angular.module('miniumMailApp')
             var i = _.findIndex(data, { id: o.id });
             if (i !== -1) {
               data.splice(i, 1);
+            } else {
+              console.log("Could not find", o);
             }
           }
         };

@@ -26,7 +26,7 @@
   </thead>
   <tbody>
     <tr class="{{mailList.selectedMail === mail ? 'info' : ''}}" ng-repeat="mail in mailList.mails | inFolder:mailList.currentFolder" ng-click="mailList.selectMail(mail)">
-      <td><span ng-repeat="tag in mail.tags" class="label label-primary">{{tag}}</span></td>
+      <td><span ng-repeat-start="tag in mail.tags" class="label label-default label-{{tag}}">{{tag}}</span> <span ng-repeat-end></span></td>
       <td>{{mail.contact_id | contactName}}</td>
       <td>{{mail.subject}}</td>
       <td>{{mail.message}}</td>

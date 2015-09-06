@@ -5,14 +5,16 @@ angular.module('miniumMailApp')
   .service('loading', function(configuration) {
 
     this.show = function() {
-        $(".loading").show();
-        setTimeout(function() {
-            $(".loading").hide();
-        }, configuration.loadingTimeoutSeconds * 1000);
+      if (!configuration.loadingTimeSeconds) return;
+
+      $(".loading").show();
+      setTimeout(function() {
+        $(".loading").hide();
+      }, configuration.loadingTimeSeconds * 1000);
     };
 
     this.hide = function() {
-        $(".loading").hide();
+      $(".loading").hide();
     };
 
   });
