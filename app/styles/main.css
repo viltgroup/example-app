@@ -18,8 +18,8 @@ body {
     padding-top: 7px;
 }
 
-.active {
-    background: #eb8f2d!important;
+.footer .glyphicon-heart {
+  color: #d9534f;
 }
 
 .trim {
