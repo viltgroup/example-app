@@ -15,8 +15,8 @@ angular.module('miniumMailApp')
       .filter(function (f) { return f !== self.currentFolder });
     this.mails = Mail.query();
 
-    this.selectMail = function (mail) {
-      self.selectedMail = mail;
+    this.toggleSelectedMail = function (mail) {
+      self.selectedMail = self.selectedMail === mail ? null : mail;
     };
     this.remove = function () {
       if (self.currentFolder.id === 'trash') {
