@@ -10,7 +10,7 @@
 angular.module('miniumMailApp')
   .controller('NavbarCtrl', function ($modal, loading, configuration) {
 
-    this.openConfigurationWindow = function(mailForm) {
+    this.openConfigurationWindow = function() {
       var modalInstance = $modal.open({
         templateUrl: 'views/configuration-form.html',
         controller: 'ConfigurationFormCtrl',
