@@ -3,6 +3,6 @@
 <div id="folders-nav" class="list-group">
   <a ng-repeat="folder in foldersNav.folders" ng-href="#/folders/{{folder.id}}" class="list-group-item {{main.currentFolder === folder.id ? 'active' : ''}}">
     <span class="badge">{{folder | countMails}}</span>
-    {{folder.name}}
+    <span>{{folder.name}}</span>
   </a>
 </div>
