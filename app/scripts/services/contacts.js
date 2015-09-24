@@ -8,16 +8,7 @@
  * Service of the miniumMailApp
  */
 angular.module('miniumMailApp')
-  .factory('Contact', function (repositoryFactory, configuration) {
-    var randomContact = function () {
-      return {
-        "id": "contact_" + chance.integer({min: 1000}),
-        "firstName": chance.first(),
-        "lastName": chance.last(),
-        "email": chance.email()
-      };
-    };
-
+  .factory('Contact', function (repositoryFactory) {
     return repositoryFactory.create([
       {
         "id": "contact_342",
@@ -43,5 +34,5 @@ angular.module('miniumMailApp')
         "lastName": "Lameiras",
         "email": "mario.lameiras@vilt-group.com"
       }
-    ].concat(_.times(configuration.randomContacts, randomContact)));
+    ]);
   });

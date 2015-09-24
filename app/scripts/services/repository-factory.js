@@ -16,7 +16,7 @@ angular.module('miniumMailApp')
             return _.find(data, { id: id });
           },
           query: function(filter) {
-            return _.filter(data, filter);
+            return filter ? _.filter(data, filter) : data;
           },
           save: function(o) {
             o = angular.copy(o);

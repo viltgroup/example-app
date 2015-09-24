@@ -43,11 +43,6 @@ angular.module('miniumMailApp')
       return this.openComposeWindow({
         subject: 'Re: ' + mail.subject,
         recipients: mail.contact_id
-        // recipients: data.contacts
-        //   .filter(function (c) { return c.id === mail.contact_id })
-        //   .map(function (c) {
-        //     return { text: c.firstName + ' ' + c.lastName, id: c.id }
-        //   })
       })
     };
   });

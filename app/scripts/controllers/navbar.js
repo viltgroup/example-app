@@ -10,6 +10,14 @@
 angular.module('miniumMailApp')
   .controller('NavbarCtrl', function ($modal, loading, configuration) {
 
+    this.openRandomGeneratorWindow = function() {
+      $modal.open({
+        templateUrl: 'views/random-generator-form.html',
+        controller: 'RandomGeneratorFormCtrl',
+        controllerAs: 'randomGeneratorFormCtrl'
+      });
+    };
+
     this.openConfigurationWindow = function() {
       var modalInstance = $modal.open({
         templateUrl: 'views/configuration-form.html',

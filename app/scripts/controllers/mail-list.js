@@ -11,8 +11,7 @@ angular.module('miniumMailApp')
   .controller('MailListCtrl', function (Mail, Folder, $filter, $routeParams, loading) {
     var self = this;
     this.currentFolder = Folder.get($routeParams.currentFolder);
-    this.otherFolders = Folder.query()
-      .filter(function (f) { return f !== self.currentFolder });
+    this.folders = Folder.query();
     this.mails = Mail.query();
 
     this.toggleSelectedMail = function (mail) {

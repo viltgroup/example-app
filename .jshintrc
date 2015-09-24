@@ -13,7 +13,7 @@
   "globals": {
     "angular": false,
     "_": false,
-    "chance": false,
+    "faker": false,
     "$": false
   }
 }
