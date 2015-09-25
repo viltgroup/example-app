@@ -28,7 +28,7 @@
   <tbody>
     <tr class="{{mailList.selectedMail === mail ? 'info' : ''}}" ng-repeat="mail in mailList.mails | inFolder:mailList.currentFolder" ng-click="mailList.toggleSelectedMail(mail)">
       <td><input type="checkbox" ng-checked="mailList.selectedMail === mail"></td>
-      <td><span ng-repeat-start="tag in mail.tags" class="label label-default label-{{tag}}">{{tag}}</span> <span ng-repeat-end></span></td>
+      <td><span ng-repeat-start="tag in mail.tags" class="label label-default" style="background-color: {{mailList.colorFor(tag)}}">{{tag}}</span> <span ng-repeat-end></span></td>
       <td>{{mail.contact_id | contactName}}</td>
       <td>{{mail.subject}}</td>
       <td>{{mail.message}}</td>

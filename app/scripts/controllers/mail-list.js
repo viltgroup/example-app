@@ -8,7 +8,7 @@
  * Controller of the miniumMailApp
  */
 angular.module('miniumMailApp')
-  .controller('MailListCtrl', function (Mail, Folder, $filter, $routeParams, loading) {
+  .controller('MailListCtrl', function (Mail, Folder, Tag, $filter, $routeParams, loading) {
     var self = this;
     this.currentFolder = Folder.get($routeParams.currentFolder);
     this.folders = Folder.query();
@@ -34,4 +34,8 @@ angular.module('miniumMailApp')
 
       loading.show()
     };
+    this.colorFor = function (tagName) {
+      var tag = Tag.get(tagName);
+      return tag ? tag.color : '#777';
+    }
   });
