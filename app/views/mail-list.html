@@ -23,6 +23,7 @@
       <th>Recipients</th>
       <th>Subject</th>
       <th>Message</th>
+      <th>Attachment</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +33,11 @@
       <td>{{mail.contact_id | contactName}}</td>
       <td>{{mail.subject}}</td>
       <td>{{mail.message}}</td>
+      <td>
+        <div ng-if="mail.attachment">
+          <span class="glyphicon glyphicon-link"></span> {{mail.attachment}}
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>

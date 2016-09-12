@@ -237,3 +237,12 @@ body {
 label[for=recipient_select] {
   display: inline;
 }
+
+.drop-zone {
+  border: dotted 3px lightgray;
+  padding: 8px;
+}
+
+.drop-zone-file-over {
+  border: dotted 3px red;
+} /* Default class applied to drop zones on over */

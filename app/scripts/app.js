@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'ngTagsInput'
+    'ngTagsInput',
+    'ngFileUpload'
   ])
   .config(function ($routeProvider) {
     $routeProvider
