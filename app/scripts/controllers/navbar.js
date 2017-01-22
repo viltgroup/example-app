@@ -35,7 +35,7 @@ angular.module('miniumMailApp')
     };
 
     this.openEmbeddedBrowser = function() {
-      var modalInstance = $modal.open({
+      $modal.open({
         templateUrl: 'views/browser.html',
         controller: 'BrowserCtrl',
         controllerAs: 'browserCtrl',
