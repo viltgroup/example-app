@@ -34,4 +34,14 @@ angular.module('miniumMailApp')
       });
     };
 
+    this.openEmbeddedBrowser = function() {
+      var modalInstance = $modal.open({
+        templateUrl: 'views/browser.html',
+        controller: 'BrowserCtrl',
+        controllerAs: 'browserCtrl',
+        size: 'lg'
+      });
+    };
+
+
   });
