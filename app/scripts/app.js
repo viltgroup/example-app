@@ -20,7 +20,7 @@ angular
     'ngTagsInput',
     'ngFileUpload'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,$locationProvider) {
     $routeProvider
       .when('/folders/:currentFolder', {
         templateUrl: 'views/main.html',
@@ -30,6 +30,7 @@ angular
       .otherwise({
         redirectTo: '/folders/inbox'
       });
+    $locationProvider.hashPrefix('');
   })
   .filter('inFolder', function() {
     return function (input, folder) {
