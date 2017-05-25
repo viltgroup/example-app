@@ -32,7 +32,7 @@ angular.module('miniumMailApp')
         "id": "mail_2154",
         "contact_id": "contact_399",
         "folders": ["inbox"],
-        "tags": [ "important", "minium" ],
+        "tags": [ "minium" ],
         "unread": "true",
         "time": 1334874976199,
         "subject": "Ping",
